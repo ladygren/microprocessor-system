@@ -1,1 +1,17 @@
-start here
+#include "stm32f769xx.h"
+#include<stdlib.h>
+
+
+int main(void)
+{	Sys_Init();
+	char key;
+	while(1)
+	{
+		printf("enter <ESC> or the combination ^[ to halt\r\n");
+		key = getchar();
+		if (isprint(key)) // printable character ASCII 33-125, isprint() return 1 if its printable, 0 otherwise
+			printf("The Keyboard character is %c \r\n", key);
+		else if (key== 27 || key == 123)
+			return 1; // return 0 or return 1?
+	}
+}
