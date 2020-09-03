@@ -5,6 +5,7 @@
 int main(void)
 {	Sys_Init();
 	char key;
+	printf("\e[2J");
 	while(1)
 	{
 		printf("enter <ESC> or the combination ^[ to halt\r\n");
